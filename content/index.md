@@ -21,9 +21,8 @@ title: 仏教論理学・認識論研究（Pramāṇa）
 ### 0. 総合体系（Architecture & Synthesis）
 - [[ja/ダルモーッタラ認識論・論理学の全体構造 (The Architecture of Dharmottara's Epistemology and Logic)|ダルモーッタラ認識論・論理学の全体構造]]：把握対象（grāhya）と獲得対象（prāpaṇīya）の二分法を基軸とする認識と実践世界の統合構造。
 
-### 1. 正しい認識手段と不欺瞞性（第1章）
+### 1. 正しい認識手段と欺かないこと（第1章）
 - [[ja/正しい認識手段 (pramāṇa)|正しい認識手段 (pramāṇa)]]：人を欺かないもの（avisaṃvādaka）；行動対象を示すもの。
-- [[ja/不欺瞞性 (avisaṃvādakatva)|不欺瞞性 (avisaṃvādakatva)]]：認識が示した実在対象の獲得を保証する論理的性質。
 - [[ja/欺かないこと (avisaṃvādaka)|欺かないこと (avisaṃvādaka)]]：目的実現能力を持つ実在対象の提示。
 - [[ja/目的実現 (arthasiddhi)|目的実現 (arthasiddhi)]]：認識に導かれた行動による目的対象の獲得と実践的達成。
 - [[ja/目的実現と目的実現能力 (arthakriyāとarthakriyāsāmarthya)|目的実現と目的実現能力 (arthakriyāとarthakriyāsāmarthya)]]：実在性の基準となる因果的効用・作用能力。
