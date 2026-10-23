@@ -45,9 +45,10 @@ title: 仏教論理学・認識論研究（Pramāṇa）
 - [[ja/アポーハ (anya-apoha)|アポーハ (anya-apoha)]]：「他者の排除」による仏教独自の唯名論的概念・言語意味論。
 - [[ja/純粋否定 (prasajya-pratiṣedha)|純粋否定 (prasajya-pratiṣedha)]]：他の肯定を伴わない排中律的否定とアポーハ論における位置づけ。
 
-### 5. 学匠・原典文献 (Philosophers & Primary Literature)
+### 5. 学匠・原典文献・結論 (Philosophers, Primary Literature & Conclusion)
 - [[ja/ダルモーッタラ (Dharmottara)|ダルモーッタラ (Dharmottara)]]：法上（8世紀後半）、カシミール出身の仏教論理学・認識論の注釈家。
 - [[ja/正理一滴論 (Nyāyabindu)|正理一滴論 (Nyāyabindu)]]：ダルマキールティ後期のEssenceを凝縮した概論書。
+- [[ja/ダルモーッタラ思想の結論と研究成果 (Conclusion and Research Significance)|ダルモーッタラ思想の結論と研究成果]]：博士論文『結論』に基づく四大研究成果と後代（カシミール・チベット）への結節点としての意義。
 
 ---
 
