@@ -50,9 +50,8 @@ flowchart TD
     end
 
     subgraph Reduction[ダルモーッタラの帰謬還元論証 prasaṅgaviparyaya]
-        Step1[帰結の否定: 普遍に多性なし 
-双方合意の真なる命題] -->|正しい証因 hetu| Step2[遍充関係: 多性なき所には多個物存在性もなし]
-        Step2 --> Conclusion[主張立証: 普遍に多個物存在性の特性なし]
+        Step1["帰結の否定: 普遍に多性なし（双方合意の真なる命題）"] -->|正しい証因 hetu| Step2["遍充関係: 多性なき所には多個物存在性もなし"]
+        Step2 --> Conclusion["主張立証: 普遍に多個物存在性の特性なし"]
     end
 
     Prasanga -->|変換| Reduction
