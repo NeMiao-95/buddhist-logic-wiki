@@ -16,7 +16,9 @@ title: 仏教論理学・認識論研究（Pramāṇa）
 ## 体系的目録 (Systematic Index)
 
 ### 1. 認識論・知覚論 (Epistemology & Perception)
-- [[ja/正しい認識手段 (pramāṇa)|正しい認識手段 (pramāṇa)]]：人を欺かないもの（avisaṃvādaka）；行動対象を示すもの。
+- [[ja/正しい認識手段 (pramāṇa)|正しい認識手段 (pramāṇa)]]：人を欺かないもの；行動対象を示すもの。
+- [[ja/目的実現 (arthasiddhi)|目的実現 (arthasiddhi)]]：対象の獲得（upādāna）と放棄（hāna）。知覚と推理における目的実現の差異。
+- [[ja/欺かないこと (avisaṃvādaka)|欺かないこと (avisaṃvādaka)]]：「目的実現の確定」から「行動対象を示すこと」への転換と自律的正当性。
 - [[ja/現量 (pratyakṣa)|現量 (pratyakṣa)]]：分別を離れ、錯乱なき直接知覚。把握対象は独自相。
 - [[ja/四種知覚 (caturvidha-pratyakṣa)|四種知覚 (caturvidha-pratyakṣa)]]：五官知覚・意識知覚・自証知覚・瑜伽知覚の四分類。
 - [[ja/把握対象と獲得対象 (grāhya-prāpaṇīya)|把握対象と獲得対象 (grāhya-prāpaṇīya)]]：一刹那の把握対象（grāhya）と刹那の相続上にある獲得対象（prāpaṇīya）。
@@ -35,9 +37,9 @@ title: 仏教論理学・認識論研究（Pramāṇa）
 - [[ja/純粋否定 (prasajya-pratiṣedha)|純粋否定 (prasajya-pratiṣedha)]]：他の肯定を伴わない排中律的否定とアポーハ論における位置づけ。
 
 ### 4. 本体論・実在論 (Ontology & Reality)
+- [[ja/真に存在する実在 (vastu)|真に存在する実在 (vastu)]]：ダルモーッタラによる vastu の四層分類（広義の vastu、独自相／勝義有、勝義 paramārtha、論証構成要素）。
 - [[ja/自相 (svalakṣaṇa)|自相 (svalakṣaṇa)]]：勝義の存在、実質的効用（arthakriyā）を持つ刹那滅の個別相（実在物 vastu）。
 - [[ja/共相 (sāmānyalakṣaṇa)|共相 (sāmānyalakṣaṇa)]]：世俗的構築、分別心の所縁としての普遍相。
-- [[ja/真に存在する実在 (vastu)|真に存在する実在 (vastu)]]：ダルモーッタラによる客観的実在概念の精緻化。
 
 ### 5. 学匠・原典文献 (Philosophers & Primary Literature)
 - [[ja/ダルモーッタラ (Dharmottara)|ダルモーッタラ (Dharmottara)]]：法上（8世紀後半）、カシミール出身の仏教論理学・認識論の注釈家。
