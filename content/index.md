@@ -17,7 +17,6 @@ title: 仏教論理学・認識論研究（Pramāṇa）
 
 ### 1. 認識論・知覚論 (Epistemology & Perception)
 - [[ja/正しい認識手段 (pramāṇa)|正しい認識手段 (pramāṇa)]]：人を欺かないもの（avisaṃvādaka）；行動対象を示すもの。
-- [[ja/不欺瞞性 (avisaṃvādakatva)|不欺瞞性 (avisaṃvādakatva)]]：目的実現能力ある対象へ人を行動させること；知覚（相続同一性）と推理（結合関係）の欺かない理由。
 - [[ja/現量 (pratyakṣa)|現量 (pratyakṣa)]]：分別を離れ、錯乱なき直接知覚。把握対象は独自相。
 - [[ja/四種知覚 (caturvidha-pratyakṣa)|四種知覚 (caturvidha-pratyakṣa)]]：五官知覚・意識知覚・自証知覚・瑜伽知覚の四分類。
 - [[ja/把握対象と獲得対象 (grāhya-prāpaṇīya)|把握対象と獲得対象 (grāhya-prāpaṇīya)]]：一刹那の把握対象（grāhya）と刹那の相続上にある獲得対象（prāpaṇīya）。
@@ -25,13 +24,8 @@ title: 仏教論理学・認識論研究（Pramāṇa）
 
 ### 2. 推理論・論理学 (Inference & Logic)
 - [[ja/比量 (anumāna)|比量 (anumāna)]]：正因に基づく論理的推論（自己の為の推理・他者の為の推理）。
-- [[ja/分別知の判定基準（近在しない対象の顕現）|分別知の判定基準（近在しない対象の顕現）]]：赤ん坊・音声・ヨーガ知覚におけるダルモーッタラ独自の分別判定法。
 - [[ja/因の三相 (trairūpya)|因の三相 (trairūpya)]]：遍是宗法性・同品定有性・異品遍無性による証因の妥当性条件。
 - [[ja/三種証因 (trividha-hetu)|三種証因 (trividha-hetu)]]：自性因・結果因・不可得因（非認識因）の分類体系。
-- [[ja/知覚可能性の二重性（条件付きと本質的）|知覚可能性の二重性（条件付きと本質的）]]：非認識因における全条件完備（付託）と観察可能性の二層構造。
-- [[ja/非認識因における付託の構造（三種のモデル）|非認識因における付託の構造（三種のモデル）]]：知覚可能対象・屍鬼の相互排除対立・過去時想起確認の三分類。
-- [[ja/主張の定義と非主張（pakṣaとapakṣa）|主張の定義と非主張（pakṣaとapakṣa）]]：所証の定義要件、五種の非主張、ただ述べられているもの（uktamātra）。
-- [[ja/四種の疑似主張（pakṣābhāsa）|四種の疑似主張（pakṣābhāsa）]]：知覚・推理・言語常識（自性因）・自身の言葉（前言矛盾）による命題破綻。
 - [[ja/本質的結合関係 (svabhāvapratibandha)|本質的結合関係 (svabhāvapratibandha)]]：同一性（tādātmya）と因果関係（tadutpatti）による論理的必然性の根拠。
 - [[ja/帰謬論証と帰謬還元論証 (prasaṅgaとprasaṅgaviparyaya)|帰謬論証と帰謬還元論証 (prasaṅgaとprasaṅgaviparyaya)]]：反論者体系の矛盾誘発と還元論証による自説の定言。
 - [[ja/論証式の革新（五支作法から三支作法へ）|論証式の革新（五支作法から三支作法へ）]]：ニヤーヤ学派の五支作法から陳那の三支作法、法称の遍充関係・主題所属性への転換。
@@ -41,14 +35,14 @@ title: 仏教論理学・認識論研究（Pramāṇa）
 - [[ja/純粋否定 (prasajya-pratiṣedha)|純粋否定 (prasajya-pratiṣedha)]]：他の肯定を伴わない排中律的否定とアポーハ論における位置づけ。
 
 ### 4. 本体論・実在論 (Ontology & Reality)
-- [[ja/自相 (svalakṣaṇa)|自相 (svalakṣaṇa)]]：勝義の存在、実質的効用（arthakriyā）を持つ刹那滅の個別相（実在物 vastu）。
+- [[ja/自相 (svalakṣaṇa)|自相 (svalakṣaṇa)]]：勝義の存在、目的実現能力（arthakriyāsāmarthya）を持つ刹那滅の個別相（実在物 vastu）。
 - [[ja/共相 (sāmānyalakṣaṇa)|共相 (sāmānyalakṣaṇa)]]：世俗的構築、分別心の所縁としての普遍相。
-- [[ja/真に存在する実在 (vastu)|真に存在する実在 (vastu)]]：ダルモーッタラによる広義（基体）と狭義（勝義有）の二重用法。
-- [[ja/目的実現と目的実現能力 (arthakriyāとarthakriyāsāmarthya)|目的実現と目的実現能力 (arthakriyāとarthakriyāsāmarthya)]]：実在性の基準、知覚における「認識を生ぜしめる能力」、知覚と推理の目的実現の二重構造。
+- [[ja/真に存在する実在 (vastu)|真に存在する実在 (vastu)]]：広義の vastu と狭義の真なる実在物（勝義有）の二層構造。
+- [[ja/目的実現と目的実現能力 (arthakriyāとarthakriyāsāmarthya)|目的実現と目的実現能力 (arthakriyāとarthakriyāsāmarthya)]]：求められるもの（heya/upādeya）の達成と、認識を生ぜしめる実在の能力。
 
 ### 5. 学匠・原典文献 (Philosophers & Primary Literature)
 - [[ja/ダルモーッタラ (Dharmottara)|ダルモーッタラ (Dharmottara)]]：法上（8世紀後半）、カシミール出身の仏教論理学・認識論の注釈家。
-- [[ja/正理一滴論 (Nyāyabindu)|正理一滴論 (Nyāyabindu)]]：ダルマキールティ後期の要諦を凝縮した概論書。
+- [[ja/正理一滴論 (Nyāyabindu)|正理一滴論 (Nyāyabindu)]]：ダルマキールティ後期のエッセンスを凝縮した概論書。
 
 ---
 
