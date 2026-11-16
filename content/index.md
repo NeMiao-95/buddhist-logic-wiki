@@ -13,6 +13,18 @@ title: 仏教論理学・認識論研究（Pramāṇa）
 
 ---
 
+
+## 人物・著作資料庫
+
+EAST（Epistemology and Argumentation in South Asia and Tibet）の公開資料を収集・整理した目録です。人物は年代順、著作はアルファベット順に検索・参照できます。
+
+<div class="east-entrypoints">
+  <p><a href="./east/index.html#persons" data-router-ignore><strong>Persons — 人物を年代順に探す</strong></a><br>原資料に明記された年代に基づく配列。年代不明の人物は別に表示します。</p>
+  <p><a href="./east/index.html#works" data-router-ignore><strong>Works — 著作をアルファベット順に探す</strong></a><br>原題・関連人物から検索し、著作・訳本の保存頁を参照できます。</p>
+</div>
+
+---
+
 ## 体系的目録 (Systematic Index)
 
 ### 1. 認識論・知覚論 (Epistemology & Perception)

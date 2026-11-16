@@ -1,0 +1,41 @@
+{
+  "result": "PASS",
+  "checks": {
+    "uniqueSourceUrls": 3022,
+    "canonicalPersons": 52,
+    "canonicalWorks": 268,
+    "chronologyStatus": {
+      "complete": 44,
+      "partial": 4,
+      "unknown": 4
+    },
+    "unknownPersonIds": [
+      "42",
+      "53",
+      "44",
+      "45"
+    ],
+    "partialPersonIds": [
+      "25",
+      "46",
+      "43",
+      "50"
+    ],
+    "pageAndRawCounts": 3022,
+    "sourceRawHashesMatched": 3022,
+    "copiedFiles": 6050,
+    "listedWorks": 191,
+    "worksWithoutAuthorSpan": 75,
+    "relationIntegrity": true,
+    "allDatesSupportedByExplicitHeadings": true
+  },
+  "notes": [
+    "原表記と本文をAIで補完していない。",
+    "人物のURL階層への帰属は翻訳者・著者の同定を意味しない。",
+    "原作・翻訳版・同名異IDは別レコードとして保持した。",
+    "年代はEASTが示す概算生存期間の上下限であり、片側不明を存命と解釈しない。",
+    "複数時点の歴史的HTML収集であり、現在のサーバーデータベース全量ではない。",
+    "権利は原著者・原サイトに帰属する。公開閲覧可能であることから再配布許諾を推定していない。",
+    "archive/pagesとarchive/original-html、および原収集索引は元ファイルの全バイトを保持する。"
+  ]
+}

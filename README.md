@@ -93,3 +93,33 @@ git add .
 git commit -m "feat: add new entries"
 git push origin main
 ```
+
+
+## 7. 人物・著作資料庫
+
+人物は年代順、著作・訳本はアルファベット順の独立検索入口を `east/` に設置する。主Wikiの概念記事と、外部資料から取り込んだ目録は別に保持する。
+
+- `east-portal/`：静的な検索画面。人物・著作の二入口、IAST変音記号を省略した検索、相互参照。
+- `east-data/catalog.json`：EASTの規範URLを単位とする52人物・268著作の目録。年代は明示された上下限のみを用い、未知4人物は別群とする。URL階層への帰属を著者・訳者と同一視しない。
+- `east-data/archive/`：収集済み公開歴史頁の読み取り版と原HTML。重複版・旧版を含む3022頁であり、3022の独立文献を意味しない。
+- `scripts/import-east.py`：原資料からの再生成と全バイト照合。Python標準ライブラリのみを使用する。
+- `scripts/build-east.mjs`：UI・目録・収集頁を `public/east/` に配置する。元資料庫のDBや機械固有のパス、作業ログは公開物に含めない。
+
+```bash
+# 初回のみ、または収集資料を更新した場合（引数は実際の元資料庫の場所）
+python3 scripts/import-east.py --source /path/to/EAST-offline
+python3 scripts/import-east.py --source /path/to/EAST-offline --check
+
+# 主Wikiと資料庫をまとめてビルドする
+npm ci
+npm run build:site
+
+# 生成物をローカル閲覧する
+python3 -m http.server 8080 --directory public
+```
+
+`npx quartz build` 単独では資料庫の配置を行わない。公開用生成物は `npm run build:site` の `public/` を用いる。プロジェクト下位パスでも相対リンクで動作する。
+
+資料の出典・スナップショット日時は目録に保持し、画面では各項目の「詳細・出典」から参照できる。収集した歴史頁は時点が混在し、現行EASTの完全なバックエンドデータを意味しない。権利は原著者・原サイトに帰属し、WikiのコードのMITライセンスを外部本文に適用しない。
+
+この変更はローカルの作業ブランチで準備したものであり、GitHub Pagesへ自動公開するワークフローの追加やpushを含まない。現在の公開出力は `gh-pages`、今回の変更基準はWiki本文のある `main`（`0c2227c`）である。公開時には既存の公開方法でビルド済み `public/` を反映する。
