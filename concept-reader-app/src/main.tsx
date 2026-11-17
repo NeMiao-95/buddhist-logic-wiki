@@ -5,6 +5,7 @@ import "./styles.css";
 import "./styles/canvas.css";
 import "./styles/inspector.css";
 import "./styles/modal.css";
+import "./styles/ipad.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

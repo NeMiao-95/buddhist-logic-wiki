@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Circle, FileText, Square, Trash2 } from "lucide-react";
+import { Circle, FileText, Square, Trash2, X } from "lucide-react";
 import {
   AiSettings,
   ConceptNode,
@@ -45,6 +45,7 @@ interface PlugInspectorDrawerProps {
   ) => void;
   onCompileSummary: (nodeId: string) => void;
   onDeleteNode: (nodeId: string) => void;
+  onClosePanel?: () => void;
 }
 
 export const PlugInspectorDrawer: React.FC<PlugInspectorDrawerProps> = ({
@@ -63,6 +64,7 @@ export const PlugInspectorDrawer: React.FC<PlugInspectorDrawerProps> = ({
   onCreateAndLinkNode,
   onCompileSummary,
   onDeleteNode,
+  onClosePanel,
 }) => {
   const [aliasDraft, setAliasDraft] = useState(node.aliases.join("、"));
   const [editingAlias, setEditingAlias] = useState(false);
@@ -76,10 +78,17 @@ export const PlugInspectorDrawer: React.FC<PlugInspectorDrawerProps> = ({
         <div>
           <div className="inspector-title-row">
             <h2>{node.label}</h2>
-            <button type="button" className="icon-pill-btn" onClick={() => onToggleShape(node.id)}>
-              {node.shape === "circle" ? <Circle size={14} /> : <Square size={14} />}
-              {node.shape === "circle" ? "圆圈" : "方格"}
-            </button>
+            <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+              <button type="button" className="icon-pill-btn" onClick={() => onToggleShape(node.id)}>
+                {node.shape === "circle" ? <Circle size={14} /> : <Square size={14} />}
+                {node.shape === "circle" ? "圆圈" : "方格"}
+              </button>
+              {onClosePanel && (
+                <button type="button" className="icon-close-btn drawer-close-btn" onClick={onClosePanel} title="收起面板">
+                  <X size={18} />
+                </button>
+              )}
+            </div>
           </div>
           {editingAlias ? (
             <div className="alias-edit-row">

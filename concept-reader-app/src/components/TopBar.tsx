@@ -1,12 +1,25 @@
 import React, { useState } from "react";
-import { BookOpenCheck, Circle, Plus, Settings, Square } from "lucide-react";
+import { BookOpen, BookOpenCheck, Circle, PanelRight, Plus, Settings, Square } from "lucide-react";
 
 interface TopBarProps {
+  libraryOpen: boolean;
+  inspectorOpen: boolean;
+  hasSelectedNode: boolean;
+  onToggleLibrary: () => void;
+  onToggleInspector: () => void;
   onCreateNode: (label: string, shape: "circle" | "rect") => void;
   onOpenSettings: () => void;
 }
 
-export const TopBar: React.FC<TopBarProps> = ({ onCreateNode, onOpenSettings }) => {
+export const TopBar: React.FC<TopBarProps> = ({
+  libraryOpen,
+  inspectorOpen,
+  hasSelectedNode,
+  onToggleLibrary,
+  onToggleInspector,
+  onCreateNode,
+  onOpenSettings,
+}) => {
   const [newLabel, setNewLabel] = useState("");
   const [newShape, setNewShape] = useState<"circle" | "rect">("circle");
 
@@ -19,9 +32,17 @@ export const TopBar: React.FC<TopBarProps> = ({ onCreateNode, onOpenSettings }) 
   return (
     <header className="topbar">
       <div className="brand-area">
-        <BookOpenCheck size={20} color="#4f46e5" />
+        <button
+          type="button"
+          className={`small-btn ${libraryOpen ? "btn-active" : ""}`}
+          onClick={onToggleLibrary}
+          title="展开/收起共读资料库"
+        >
+          <BookOpen size={14} /> 书库
+        </button>
+        <BookOpenCheck size={20} color="#4f46e5" className="brand-icon" />
         <h1>ConceptPlug Reader</h1>
-        <span className="brand-badge">插头式伴读 · 磁吸图谱 · 可复刻说明文</span>
+        <span className="brand-badge">插头式伴读 · 磁吸图谱</span>
       </div>
 
       <div className="create-bar">
@@ -51,13 +72,23 @@ export const TopBar: React.FC<TopBarProps> = ({ onCreateNode, onOpenSettings }) 
           </button>
         </div>
         <button type="button" className="primary-btn" onClick={submit}>
-          <Plus size={15} /> 生成概念
+          <Plus size={15} /> 生成
         </button>
       </div>
 
       <div className="topbar-actions">
+        {hasSelectedNode && (
+          <button
+            type="button"
+            className={`small-btn ${inspectorOpen ? "btn-active" : ""}`}
+            onClick={onToggleInspector}
+            title="展开/收起插头编辑面板"
+          >
+            <PanelRight size={14} /> 插头面板
+          </button>
+        )}
         <button type="button" className="small-btn" onClick={onOpenSettings}>
-          <Settings size={14} /> 设置 / 跨电脑同步
+          <Settings size={14} /> 设置
         </button>
       </div>
     </header>

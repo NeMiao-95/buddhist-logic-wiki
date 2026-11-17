@@ -15,11 +15,34 @@ export default function App() {
   const [showSettings, setShowSettings] = useState(false);
   const [showAdmin, setShowAdmin] = useState(false);
   const [showGuide, setShowGuide] = useState(true);
+  const [libraryOpen, setLibraryOpen] = useState(() => window.innerWidth >= 1024);
+  const [inspectorOpen, setInspectorOpen] = useState(() => window.innerWidth >= 820);
   const selectedNode = ctrl.workspace.nodes.find((n) => n.id === ctrl.selectedNodeId) || null;
 
   return (
     <div className="app-shell">
-      <TopBar onCreateNode={ctrl.addConceptNode} onOpenSettings={() => setShowSettings(true)} />
+      <TopBar
+        libraryOpen={libraryOpen}
+        inspectorOpen={inspectorOpen && Boolean(selectedNode)}
+        hasSelectedNode={Boolean(selectedNode)}
+        onToggleLibrary={() => {
+          setLibraryOpen((v) => {
+            if (!v && window.innerWidth < 1024) setInspectorOpen(false);
+            return !v;
+          });
+        }}
+        onToggleInspector={() => {
+          setInspectorOpen((v) => {
+            if (!v && window.innerWidth < 1024) setLibraryOpen(false);
+            return !v;
+          });
+        }}
+        onCreateNode={(label, shape) => {
+          ctrl.addConceptNode(label, shape);
+          setInspectorOpen(true);
+        }}
+        onOpenSettings={() => setShowSettings(true)}
+      />
       {showGuide && (
         <div className="tip-banner">
           <span>💡 <strong>快速体验：</strong>点开 <strong>Vedānta</strong> 的 <strong>P1 归属</strong> 输入「印度哲学的学派」触发磁吸；点 <strong>P4/P5/P6</strong> 问 AI 书中短答；最后点「编译可复刻说明文」。</span>
@@ -27,16 +50,18 @@ export default function App() {
         </div>
       )}
       <div className="workspace-grid">
-        <BookLibraryPanel
-          documents={ctrl.workspace.documents}
-          onAddDocument={(title, role, content) =>
-            ctrl.setWorkspace((p) => ({
-              ...p,
-              documents: [{ id: `doc_${Date.now()}`, title, role, content, createdAt: new Date().toISOString() }, ...p.documents],
-            }))
-          }
-          onDeleteDocument={(docId) => ctrl.setWorkspace((p) => ({ ...p, documents: p.documents.filter((d) => d.id !== docId) }))}
-        />
+        {libraryOpen && (
+          <BookLibraryPanel
+            documents={ctrl.workspace.documents}
+            onAddDocument={(title, role, content) =>
+              ctrl.setWorkspace((p) => ({
+                ...p,
+                documents: [{ id: `doc_${Date.now()}`, title, role, content, createdAt: new Date().toISOString() }, ...p.documents],
+              }))
+            }
+            onDeleteDocument={(docId) => ctrl.setWorkspace((p) => ({ ...p, documents: p.documents.filter((d) => d.id !== docId) }))}
+          />
+        )}
         <ConceptCanvas
           nodes={ctrl.workspace.nodes}
           edges={ctrl.workspace.edges}
@@ -48,7 +73,11 @@ export default function App() {
           magneticPulse={ctrl.magneticPulse}
           onSelectNodePlug={(nodeId, plugId) => {
             ctrl.setSelectedNodeId(nodeId);
-            if (plugId) ctrl.setSelectedPlugId(plugId);
+            if (plugId) {
+              ctrl.setSelectedPlugId(plugId);
+              setInspectorOpen(true);
+              if (window.innerWidth < 1024) setLibraryOpen(false);
+            }
             ctrl.setHighlightedNodeId(null);
             ctrl.setHighlightedEdgeId(null);
           }}
@@ -57,7 +86,7 @@ export default function App() {
           }
           onDeleteEdge={(edgeId) => ctrl.setWorkspace((p) => ({ ...p, edges: p.edges.filter((e) => e.id !== edgeId) }))}
         />
-        {selectedNode && (
+        {selectedNode && inspectorOpen && (
           <PlugInspectorDrawer
             node={selectedNode}
             allNodes={ctrl.workspace.nodes}
@@ -74,6 +103,7 @@ export default function App() {
             onCreateAndLinkNode={ctrl.createAndLinkNode}
             onCompileSummary={ctrl.compileNodeSummary}
             onDeleteNode={ctrl.deleteNode}
+            onClosePanel={() => setInspectorOpen(false)}
           />
         )}
       </div>

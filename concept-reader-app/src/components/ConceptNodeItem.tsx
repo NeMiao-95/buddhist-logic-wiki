@@ -37,7 +37,7 @@ interface ConceptNodeItemProps {
   isHighlighted: boolean;
   selectedPlugId: PlugId | null;
   onSelectPlug: (nodeId: string, plugId: PlugId) => void;
-  onStartDragNode: (e: React.MouseEvent, node: ConceptNode) => void;
+  onStartDragNode: (e: React.PointerEvent, node: ConceptNode) => void;
 }
 
 export const ConceptNodeItem: React.FC<ConceptNodeItemProps> = ({
@@ -74,11 +74,17 @@ export const ConceptNodeItem: React.FC<ConceptNodeItemProps> = ({
             className={`plug-arm ${filled ? "filled" : "empty"} ${
               isPlugSelected ? "plug-selected" : ""
             }`}
+            onPointerDown={(e) => {
+              e.stopPropagation();
+            }}
             onClick={(e) => {
               e.stopPropagation();
               onSelectPlug(node.id, plug.id);
             }}
           >
+            {/* Generous invisible hit area for Apple Pencil / touch */}
+            <circle cx={tip.tx} cy={tip.ty} r={22} fill="transparent" />
+            <circle cx={tip.lx} cy={tip.ly} r={18} fill="transparent" />
             <line
               x1={tip.sx}
               y1={tip.sy}
@@ -117,7 +123,7 @@ export const ConceptNodeItem: React.FC<ConceptNodeItemProps> = ({
 
       <g
         className="node-body-hit"
-        onMouseDown={(e) => onStartDragNode(e, node)}
+        onPointerDown={(e) => onStartDragNode(e, node)}
       >
         {node.shape === "circle" ? (
           <circle r={48} className="node-shape" />
