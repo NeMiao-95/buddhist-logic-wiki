@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { KeyRound } from "lucide-react";
+import { AdminSyncModal } from "./components/AdminSyncModal";
 import { BookLibraryPanel } from "./components/BookLibraryPanel";
 import { ConceptCanvas } from "./components/ConceptCanvas";
 import { PlugInspectorDrawer } from "./components/PlugInspectorDrawer";
@@ -11,6 +13,7 @@ import { downloadWorkspaceJson, parseWorkspaceJsonFile } from "./services/storag
 export default function App() {
   const ctrl = useWorkspaceController();
   const [showSettings, setShowSettings] = useState(false);
+  const [showAdmin, setShowAdmin] = useState(false);
   const [showGuide, setShowGuide] = useState(true);
   const selectedNode = ctrl.workspace.nodes.find((n) => n.id === ctrl.selectedNodeId) || null;
 
@@ -99,6 +102,32 @@ export default function App() {
           onClose={() => setShowSettings(false)}
         />
       )}
+      {showAdmin && (
+        <AdminSyncModal
+          adminConfig={ctrl.adminSync.adminConfig}
+          syncStatus={ctrl.adminSync.syncStatus}
+          syncMessage={ctrl.adminSync.syncMessage}
+          onLogin={ctrl.adminSync.login}
+          onPushNow={ctrl.adminSync.pushNow}
+          onPullNow={ctrl.adminSync.pullNow}
+          onToggleAutoSync={ctrl.adminSync.toggleAutoSync}
+          onLogout={ctrl.adminSync.logout}
+          onClose={() => setShowAdmin(false)}
+        />
+      )}
+      <button
+        type="button"
+        className={`admin-corner-btn ${ctrl.adminSync.adminConfig.token ? "logged-in" : ""}`}
+        onClick={() => setShowAdmin(true)}
+        title="管理者私有云同步通道"
+      >
+        <KeyRound size={12} />
+        {ctrl.adminSync.adminConfig.token
+          ? ctrl.adminSync.syncStatus === "syncing"
+            ? "同步中..."
+            : `管理者 @${ctrl.adminSync.adminConfig.username || "Admin"}`
+          : "管理者"}
+      </button>
     </div>
   );
 }

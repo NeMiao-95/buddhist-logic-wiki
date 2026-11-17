@@ -1,8 +1,15 @@
 import { createDemoWorkspace, DEFAULT_AI_SETTINGS } from "../data/demoWorkspace";
-import { AiSettings, WorkspaceData } from "../types/schema";
+import { AdminSyncConfig, AiSettings, WorkspaceData } from "../types/schema";
 
 const WORKSPACE_KEY = "concept_plug_reader_workspace_v1";
 const SETTINGS_KEY = "concept_plug_reader_settings_v1";
+const ADMIN_KEY = "concept_plug_reader_admin_v1";
+
+export const DEFAULT_ADMIN_CONFIG: AdminSyncConfig = {
+  token: "",
+  gistId: "",
+  autoSync: true,
+};
 
 export function loadWorkspace(): WorkspaceData {
   try {
@@ -63,5 +70,31 @@ export async function parseWorkspaceJsonFile(file: File): Promise<WorkspaceData 
     return null;
   } catch {
     return null;
+  }
+}
+
+export function loadAdminSync(): AdminSyncConfig {
+  try {
+    const raw = localStorage.getItem(ADMIN_KEY);
+    if (!raw) return DEFAULT_ADMIN_CONFIG;
+    return { ...DEFAULT_ADMIN_CONFIG, ...JSON.parse(raw) };
+  } catch {
+    return DEFAULT_ADMIN_CONFIG;
+  }
+}
+
+export function saveAdminSync(config: AdminSyncConfig): void {
+  try {
+    localStorage.setItem(ADMIN_KEY, JSON.stringify(config));
+  } catch {
+    // Ignore quota errors
+  }
+}
+
+export function clearAdminSync(): void {
+  try {
+    localStorage.removeItem(ADMIN_KEY);
+  } catch {
+    // Ignore
   }
 }

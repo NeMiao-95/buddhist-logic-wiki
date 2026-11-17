@@ -200,6 +200,14 @@ export interface AiSettings {
   autoSnapExactMatch: boolean;
 }
 
+export interface AdminSyncConfig {
+  token: string;
+  gistId: string;
+  username?: string;
+  autoSync: boolean;
+  lastSyncedAt?: string;
+}
+
 export interface WorkspaceData {
   version: "1.0";
   plugDefinitions: PlugDefinition[];

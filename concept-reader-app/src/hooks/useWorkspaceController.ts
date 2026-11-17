@@ -9,6 +9,7 @@ import { callOpenAiCompatible } from "../services/llmClient";
 import { loadAiSettings, loadWorkspace, saveAiSettings, saveWorkspace } from "../services/storage";
 import { AiSettings, CompiledSummary, ConceptNode, FactEntry, PlugDefinition, PlugId, WorkspaceData } from "../types/schema";
 import { MagneticPulse } from "../components/ConceptCanvas";
+import { useAdminSync } from "./useAdminSync";
 
 export function useWorkspaceController() {
   const [workspace, setWorkspace] = useState<WorkspaceData>(() => loadWorkspace());
@@ -43,8 +44,23 @@ export function useWorkspaceController() {
     );
   };
 
+  const resetDemo = () => {
+    setWorkspace(createDemoWorkspace());
+    setSelectedNodeId("node_vedanta");
+    setSelectedPlugId("P1");
+  };
+
+  const adminSync = useAdminSync(
+    workspace,
+    (ws) => {
+      setWorkspace(ws);
+      setSelectedNodeId(ws.nodes[0]?.id || null);
+    },
+    resetDemo
+  );
+
   return {
-    workspace, setWorkspace, aiSettings, setAiSettings, chunks,
+    workspace, setWorkspace, aiSettings, setAiSettings, chunks, adminSync,
     selectedNodeId, setSelectedNodeId, selectedPlugId, setSelectedPlugId,
     highlightedNodeId, setHighlightedNodeId, highlightedEdgeId, setHighlightedEdgeId,
     magneticPulse, activeSummary, setActiveSummary, compiling,
@@ -77,7 +93,7 @@ export function useWorkspaceController() {
         setCompiling(false);
       }
     },
-    resetDemo: () => { setWorkspace(createDemoWorkspace()); setSelectedNodeId("node_vedanta"); setSelectedPlugId("P1"); },
+    resetDemo,
     updatePlugDefinitions: (defs: PlugDefinition[]) => setWorkspace((p) => ({ ...p, plugDefinitions: defs })),
     toggleShape: (nid: string) =>
       setWorkspace((p) => ({ ...p, nodes: p.nodes.map((n) => (n.id === nid ? { ...n, shape: n.shape === "circle" ? "rect" : "circle" } : n)) })),

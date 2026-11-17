@@ -6,6 +6,7 @@ import { mutateLinkNodes } from "../src/engine/graphMutations.ts";
 import { buildAllChunks, extractConciseDemoAnswer } from "../src/engine/localRag.ts";
 import { findMatchingNodes } from "../src/engine/normalize.ts";
 import { compileDeterministically } from "../src/engine/summaryCompiler.ts";
+import { pullWorkspaceFromGist, pushWorkspaceToGist, SYNC_FILENAME, verifyAdminTokenAndDiscoverGist } from "../src/services/gistSync.ts";
 
 const ws = createDemoWorkspace();
 
@@ -58,5 +59,35 @@ const auditFail = auditCompiledMarkdown(badMarkdown, bundle1);
 assert.equal(auditFail.passed, false);
 assert.ok(auditFail.invalidIds.includes("F99"));
 assert.ok(auditFail.uncitedSentences.some((s) => s.includes("商羯罗")));
+
+// 5. Admin Private Gist Sync round-trip with mocked fetch
+const origFetch = globalThis.fetch;
+let storedBody = "";
+globalThis.fetch = (async (url: string, init?: RequestInit) => {
+  if (url.endsWith("/user")) {
+    return new Response(JSON.stringify({ login: "NeMiao-95" }), { status: 200 });
+  }
+  if (url.includes("/gists?per_page=100")) {
+    return new Response(JSON.stringify([{ id: "gist_abc123", files: { [SYNC_FILENAME]: {} } }]), { status: 200 });
+  }
+  if (init?.method === "PATCH") {
+    storedBody = String(init.body || "");
+    return new Response(JSON.stringify({ id: "gist_abc123" }), { status: 200 });
+  }
+  if (url.endsWith("/gists/gist_abc123")) {
+    const parsed = JSON.parse(storedBody);
+    return new Response(JSON.stringify({ id: "gist_abc123", files: { [SYNC_FILENAME]: { content: parsed.files[SYNC_FILENAME].content } } }), { status: 200 });
+  }
+  return new Response("not found", { status: 404 });
+}) as typeof fetch;
+
+const info = await verifyAdminTokenAndDiscoverGist("tok_test");
+assert.equal(info.username, "NeMiao-95");
+assert.equal(info.gistId, "gist_abc123");
+const pushed = await pushWorkspaceToGist("tok_test", info.gistId, linkedWs);
+assert.equal(pushed.gistId, "gist_abc123");
+const pulled = await pullWorkspaceFromGist("tok_test", info.gistId);
+assert.equal(pulled.workspace.nodes.length, linkedWs.nodes.length);
+globalThis.fetch = origFetch;
 
 console.log("ALL ENGINE TESTS PASSED (snapshotHash=" + bundle1.snapshotHash + ")");
