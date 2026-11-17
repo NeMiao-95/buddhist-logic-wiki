@@ -1,0 +1,30 @@
+.canvas-wrapper { flex: 1; position: relative; min-width: 0; height: 100%; background: #f8fafc; overflow: hidden; }
+.canvas-hud { position: absolute; top: 10px; left: 12px; right: 12px; z-index: 5; display: flex; justify-content: space-between; align-items: center; pointer-events: none; font-size: 12px; color: var(--muted); }
+.canvas-hud span { background: rgba(255,255,255,0.92); padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border); }
+.canvas-hud button { pointer-events: auto; }
+.concept-svg { display: block; width: 100%; height: 100%; cursor: grab; user-select: none; }
+.concept-svg:active { cursor: grabbing; }
+.node-shape { fill: #ffffff; stroke: #475569; stroke-width: 2.2; filter: drop-shadow(0 4px 10px rgba(15,23,42,0.08)); transition: stroke 0.15s; }
+.concept-node.selected .node-shape { stroke: var(--indigo); stroke-width: 3; fill: #fdfdff; }
+.concept-node.highlighted .node-shape { stroke: #ea580c; stroke-width: 3.5; fill: #fff7ed; }
+.node-title { font-size: 13px; font-weight: 700; fill: #0f172a; pointer-events: none; }
+.node-submeta { font-size: 11px; fill: #64748b; pointer-events: none; }
+.plug-arm { cursor: pointer; }
+.plug-stalk { stroke: #94a3b8; stroke-width: 2.2; }
+.plug-arm:hover .plug-stalk { stroke: #4f46e5; stroke-width: 2.6; }
+.plug-arm.filled .plug-stalk { stroke: #10b981; stroke-width: 2.6; }
+.plug-socket-outer { fill: #ffffff; stroke: #6366f1; stroke-width: 2.2; }
+.plug-socket-core { fill: #cbd5e1; }
+.plug-arm.filled .plug-socket-core { fill: #10b981; }
+.plug-record-head { fill: #ffffff; stroke: #94a3b8; stroke-width: 2; }
+.plug-arm.filled .plug-record-head { fill: #d1fae5; stroke: #059669; }
+.plug-arm.plug-selected .plug-socket-outer, .plug-arm.plug-selected .plug-record-head { stroke: #ea580c; stroke-width: 3; }
+.plug-label-text { font-size: 10.5px; fill: #475569; font-weight: 600; pointer-events: none; }
+.plug-arm.filled .plug-label-text { fill: #047857; }
+.edge-label-pill { cursor: pointer; }
+.edge-label-pill rect { fill: #eef2ff; stroke: #c7d2fe; stroke-width: 1.2; }
+.edge-label-pill text { font-size: 10.5px; fill: #4338ca; font-weight: 600; }
+.magnetic-ring-outer { fill: none; stroke: #6366f1; stroke-width: 2.5; stroke-dasharray: 6 5; animation: pulseMagnet 0.7s ease-in-out infinite; }
+.magnetic-ring-inner { fill: rgba(99,102,241,0.08); stroke: #4f46e5; stroke-width: 2; }
+.magnetic-beam-line { stroke: #f59e0b; stroke-width: 3; stroke-dasharray: 8 6; }
+@keyframes pulseMagnet { 0% { opacity: 0.95; } 50% { opacity: 0.35; } 100% { opacity: 0.95; } }
