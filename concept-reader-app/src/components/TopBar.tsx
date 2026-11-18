@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BookOpen, BookOpenCheck, Circle, PanelRight, Plus, Settings, Square } from "lucide-react";
+import { ArrowLeft, BookOpen, BookOpenCheck, Circle, PanelRight, Plus, Settings, Square } from "lucide-react";
 
 interface TopBarProps {
   libraryOpen: boolean;
@@ -32,6 +32,9 @@ export const TopBar: React.FC<TopBarProps> = ({
   return (
     <header className="topbar">
       <div className="brand-area">
+        <a className="small-btn home-link" href="../" aria-label="返回 Wiki 主页">
+          <ArrowLeft size={14} aria-hidden="true" /> 返回主页
+        </a>
         <button
           type="button"
           className={`small-btn ${libraryOpen ? "btn-active" : ""}`}
