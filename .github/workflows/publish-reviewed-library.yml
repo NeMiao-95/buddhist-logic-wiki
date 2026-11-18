@@ -1,0 +1,47 @@
+name: Publish reviewed persons and works library
+on:
+  push:
+    branches: [codex/publish-library-20261118]
+permissions:
+  contents: write
+concurrency:
+  group: publish-reviewed-library-20261118
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify and restore reviewed release bundles
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, json, os
+          manifest = json.loads(Path('.publish/manifest.json').read_text())
+          for label in ['original', 'update']:
+              item = manifest[label]
+              data = b''.join(Path(part).read_bytes() for part in item['parts'])
+              assert len(data) == item['bytes'], label + ' byte count mismatch'
+              assert hashlib.sha256(data).hexdigest() == item['sha256'], label + ' digest mismatch'
+              Path(os.environ['RUNNER_TEMP'], 'library-' + label + '.bundle').write_bytes(data)
+          PY
+          git bundle verify "$RUNNER_TEMP/library-original.bundle"
+          git fetch "$RUNNER_TEMP/library-original.bundle" refs/heads/codex/east-library:refs/remotes/release/original-source refs/heads/codex/east-pages:refs/remotes/release/original-pages
+          git bundle verify "$RUNNER_TEMP/library-update.bundle"
+          git fetch "$RUNNER_TEMP/library-update.bundle" refs/heads/codex/east-library:refs/remotes/release/source refs/heads/codex/east-pages-current:refs/remotes/release/pages
+      - name: Publish both branches without overwriting newer work
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = 93d9737a6c7eab17bd798d8dbaa2cc22eb18a88a
+          test "$(git ls-remote origin refs/heads/gh-pages | cut -f1)" = 47d29ebf90096ddde17c8bbffb29c9be9c7e81de
+          test "$(git rev-parse refs/remotes/release/source)" = 535fa38d9ad2feebdb84cca7f59f519054622291
+          test "$(git rev-parse refs/remotes/release/pages)" = b3297aacedbdfbaaebbf9c207ae5dd41f3163e6a
+          git merge-base --is-ancestor origin/main refs/remotes/release/source
+          git merge-base --is-ancestor origin/gh-pages refs/remotes/release/pages
+          git push --atomic origin refs/remotes/release/source:refs/heads/main refs/remotes/release/pages:refs/heads/gh-pages
