@@ -1,1 +1,4 @@
 * text=auto eol=lf
+
+# Preserve published archival bytes.
+east/archive/** -text

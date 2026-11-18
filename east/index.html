@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja-JP">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="人物・著作を年代順およびアルファベット順で参照する資料庫。">
+  <title>人物・著作資料庫 · Buddhist Logic Wiki</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#results">資料一覧へ移動</a>
+  <div class="page">
+    <header class="site-header">
+      <a class="back-link" href="../index.html">← Buddhist Logic Wiki</a>
+      <h1>人物・著作資料庫</h1>
+      <p class="intro">本資料庫はEASTの公開資料に基づきます。</p>
+    </header>
+    <main>
+      <div class="tabs" role="tablist" aria-label="資料の種類">
+        <button id="tab-persons" type="button" role="tab" aria-selected="true" aria-controls="catalog-panel" tabindex="0" data-tab="persons">Persons <span id="persons-count" class="tab-count">—</span></button>
+        <button id="tab-works" type="button" role="tab" aria-selected="false" aria-controls="catalog-panel" tabindex="-1" data-tab="works">Works <span id="works-count" class="tab-count">—</span></button>
+      </div>
+      <section id="catalog-panel" role="tabpanel" aria-labelledby="tab-persons">
+        <div class="controls">
+          <div class="search-control">
+            <label for="search">索引内を検索</label>
+            <input id="search" type="search" placeholder="人物名・題名・著者名" autocomplete="off" aria-describedby="search-help">
+            <p id="search-help" class="hint">IAST の長母音・変音記号を省略して検索できます。</p>
+          </div>
+          <div class="sort-control">
+            <label for="sort">表示順</label>
+            <select id="sort"><option value="chronological">年代順（昇順）</option><option value="alphabetical">アルファベット順</option></select>
+          </div>
+        </div>
+        <div id="author-filter" class="filter" hidden><span id="author-filter-label"></span><button id="clear-author" type="button">関連人物の絞り込みを解除</button></div>
+        <div class="list-heading"><h2 id="list-title">Persons</h2><p id="result-status" role="status" aria-live="polite">資料を読み込んでいます…</p></div>
+        <p id="ordering-note" class="hint">年代は索引の整列用データに基づきます。各項目には原資料の年代表記を示します。</p>
+        <div id="results" tabindex="-1" aria-busy="true"></div>
+        <noscript><div class="notice"><p>索引の検索と一覧表示には JavaScript が必要です。<a href="catalog.json">索引データ（JSON）</a> の localUrl に、保存済み原ページの相対パスを記録しています。</p></div></noscript>
+      </section>
+    </main>
+    <footer><p>項目名から本文を開きます。出典は各項目の「詳細・出典」で確認できます。</p><p><a href="catalog.json">索引データ（JSON）</a></p></footer>
+  </div>
+</body>
+</html>

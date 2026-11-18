@@ -1,0 +1,19 @@
+{
+  "planned": 3022,
+  "saved": 3022,
+  "failed": 0,
+  "not_attempted": 0,
+  "categories": {
+    "索引及说明": 12,
+    "人物": 52,
+    "作品": 268,
+    "关联书目": 1574,
+    "独立书目": 495,
+    "旧版页面": 621
+  },
+  "citation_occurrences": 5676,
+  "unique_bibliographic_ids": 1084,
+  "unavailable_linked_urls": 1271,
+  "earliest_snapshot": "20191021043853",
+  "latest_snapshot": "20260808105351"
+}
