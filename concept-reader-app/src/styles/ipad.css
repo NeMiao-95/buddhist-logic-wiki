@@ -1,0 +1,82 @@
+/* iPad + Apple Pencil & Touch Ergonomics */
+.app-shell {
+  height: 100dvh;
+  padding-top: env(safe-area-inset-top);
+}
+.workspace-grid {
+  position: relative;
+}
+.concept-svg {
+  touch-action: none;
+  -webkit-user-select: none;
+}
+.btn-active {
+  border-color: var(--indigo) !important;
+  background: var(--indigo-soft) !important;
+  color: var(--indigo) !important;
+  font-weight: 600;
+}
+.hud-zoom-group {
+  display: inline-flex;
+  gap: 5px;
+  pointer-events: auto;
+}
+.drawer-close-btn {
+  padding: 4px;
+  border-radius: 6px;
+}
+.admin-corner-btn {
+  left: 14px;
+  right: auto;
+  bottom: max(12px, env(safe-area-inset-bottom));
+}
+
+@media (max-width: 1180px) {
+  .brand-badge {
+    display: none;
+  }
+  .library-panel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: min(300px, 85vw);
+    z-index: 22;
+    box-shadow: 6px 0 24px rgba(15, 23, 42, 0.14);
+  }
+  .inspector-drawer {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: min(390px, 92vw);
+    z-index: 22;
+    box-shadow: -6px 0 24px rgba(15, 23, 42, 0.14);
+  }
+}
+
+@media (pointer: coarse), (max-width: 1180px) {
+  /* Prevent iPadOS Safari auto-zoom on Apple Pencil Scribble / tap */
+  input,
+  textarea {
+    font-size: 16px !important;
+  }
+  .small-btn,
+  .hud-reset-btn,
+  .primary-btn,
+  .plug-tab,
+  .quick-q-chip,
+  .magnet-snap-btn,
+  .primary-compile-btn {
+    min-height: 38px;
+  }
+  .hud-hint-pill {
+    display: none;
+  }
+  .canvas-hud {
+    justify-content: flex-start;
+  }
+  .plug-label-text {
+    font-size: 11.5px;
+  }
+}

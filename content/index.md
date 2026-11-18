@@ -11,6 +11,12 @@ title: 仏教論理学・認識論研究（Pramāṇa）
 
 インド仏教論理学・認識論（プラマーナ学派：ディグナーガ／陳那・ダルマキールティ／法称・ダルモーッタラ／法上）のテキスト研究・概念ネットワークを体系的に公開するデジタル知識ベースです。
 
+<div style="margin: 16px 0 24px; padding: 14px 16px; border: 1px solid rgba(79, 70, 229, 0.35); background: rgba(79, 70, 229, 0.06); border-radius: 10px;">
+  <div style="font-weight: 700; margin-bottom: 6px;">🧩 インタラクティブ伴読ツール / ConceptPlug Reader</div>
+  <a href="./concept-reader/index.html" data-router-ignore style="font-weight: 700; text-decoration: underline;">ConceptPlug Reader を開く（概念插头式 AI 伴读与可复刻图谱编译器）→</a>
+  <div style="font-size: 0.9em; opacity: 0.85; margin-top: 4px;">概念ノード・7プラグ整理・既知概念への磁気吸着・文献根拠短答・再現可能な解説文コンパイラ。</div>
+</div>
+
 ---
 
 
