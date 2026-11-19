@@ -1,9 +1,9 @@
 ---
 title: 仏教論理学・認識論研究（Pramāṇa）
-description: 原典を読み、思索をつなぐ。インド仏教の論理学・認識論を探究する研究ポータル。EAST人物・著作資料庫と読解・チベット語研究ツールを公開しています。
+description: 原典をひらく。認識をたどる。インド仏教の論理学・認識論を探究する研究ポータル。EAST人物・著作資料庫、ConceptPlug Reader、蔵文逐詞音訳ツールを公開しています。
 ---
 
-<div class="pramana-home">
+<div class="pramana-home" data-motion="paused">
   <a class="home-skip" href="#home-main">本文へ移動</a>
   <header class="home-header home-shell">
     <a class="home-brand" href="./index.html" data-no-popover="true" aria-label="Pramāṇa ホーム">
@@ -18,44 +18,35 @@ description: 原典を読み、思索をつなぐ。インド仏教の論理学�
   </header>
   <div id="home-main" tabindex="-1">
     <section class="home-hero">
+      <div class="hero-mineral" aria-hidden="true"></div>
+      <div class="hero-motes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
       <div class="home-shell home-hero-grid">
         <div class="home-hero-copy">
           <p class="home-kicker"><span></span>BUDDHIST EPISTEMOLOGY &amp; LOGIC</p>
-          <h1>原典を読み、<br>思索をつなぐ。</h1>
-          <p class="home-hero-lead">インド仏教の論理学・認識論を、<br>テキストと概念、そして研究のための道具から。</p>
-          <div class="home-actions">
-            <a class="home-button home-button-primary" href="./east/index.html" data-router-ignore data-no-popover="true">資料庫を探索する</a>
-            <a class="home-text-link" href="#tools" data-no-popover="true">研究ツールを見る</a>
-          </div>
-          <p class="home-hero-caption" lang="en">A digital space for texts, ideas, and inquiry.</p>
+          <h1>原典をひらく。<br><span class="hero-accent">認識</span>をたどる。</h1>
+          <p class="home-hero-lead">一つの言葉から、思想のつながりへ。<br>インド仏教の論理学・認識論を探究する<br>研究資料と、読解のための道具。</p>
+          <div class="home-actions"><a class="home-button home-button-primary" href="./east/index.html" data-router-ignore data-no-popover="true">資料庫を探索する</a><a class="home-text-link" href="#tools" data-no-popover="true">研究ツールを見る</a></div>
+          <p class="home-hero-caption" lang="sa-Latn">pratyakṣa <span>·</span> anumāna <span>·</span> pramāṇa</p>
         </div>
-        <div class="home-folio" aria-hidden="true">
-          <div class="folio-orbit"></div>
-          <div class="folio-orbit folio-orbit-inner"></div>
-          <span class="folio-side-label">TEXTS · IDEAS · INQUIRY</span>
-          <div class="folio-sheet folio-sheet-back"></div>
-          <div class="folio-sheet folio-sheet-main">
-            <div class="folio-page-top"><span>PRAMĀṆA</span><span>प्रमाण</span></div>
-            <p class="folio-word" lang="sa-Latn">pramāṇa</p>
-            <div class="folio-rule"></div>
-            <div class="folio-lines"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-            <div class="folio-marginalia">知る、ということ。</div>
-            <div class="folio-page-bottom"><span>Nyāyabindu</span><span>Dharmottara</span></div>
-          </div>
-          <div class="folio-note"><span>原典から、概念へ。</span><i></i><i></i></div>
-          <div class="folio-seal">量</div>
-          <span class="folio-caption">THE ART OF KNOWING</span>
+        <div class="hero-illumination">
+          <div class="hero-art-frame"><img class="hero-art" src="./static/pramana-manuscript.webp" width="1024" height="1024" alt="原典をひらく営みを表した、青と金の写本のイラスト" fetchpriority="high" decoding="async"></div>
+          <svg class="hero-orbits" viewBox="0 0 600 600" fill="none" aria-hidden="true">
+            <circle cx="300" cy="300" r="236" stroke="currentColor" stroke-width="0.8"></circle>
+            <circle cx="300" cy="300" r="279" stroke="currentColor" stroke-width="0.6" opacity=".6"></circle>
+            <g class="hero-orbit-slow"><circle cx="300" cy="300" r="270" stroke="currentColor" stroke-width="8" stroke-dasharray="1 28" opacity=".65"></circle><circle cx="300" cy="30" r="3.2" fill="currentColor"></circle><path d="M291 14h18v18h-18zM286 572h28v14h-28z" stroke="currentColor" stroke-width=".8"></path></g>
+            <g class="hero-orbit-reverse"><circle cx="300" cy="300" r="254" stroke="currentColor" stroke-width=".7" stroke-dasharray="48 12"></circle><circle cx="300" cy="554" r="2.3" fill="currentColor"></circle></g>
+          </svg>
+          <span class="hero-orbit-label hero-orbit-label-top">TEXT · THOUGHT · CONNECTION</span>
+          <span class="hero-orbit-label hero-orbit-label-bottom">PRAMĀṆA — THE ART OF KNOWING</span>
         </div>
       </div>
+      <svg class="hero-horizon" viewBox="0 0 1440 110" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M-20 85C180 10 330 120 560 61S940 41 1110 74 1310 64 1460 11V120H-20Z" fill="#193d75"></path><path d="M-20 104C210 40 340 126 570 80S930 58 1110 85 1300 84 1460 36" stroke="#c5a86c" stroke-width=".7" opacity=".65"></path><path d="M-20 112C200 68 420 132 690 97S1080 130 1460 72" stroke="#c5a86c" stroke-width=".5" opacity=".35"></path></svg>
     </section>
-    <div class="home-domains">
-      <div class="home-shell home-domain-grid">
-        <div><span class="home-domain-jp">原典と注釈</span><span lang="en">Texts &amp; Commentaries</span></div>
-        <div><span class="home-domain-jp">概念と論証</span><span lang="en">Concepts &amp; Arguments</span></div>
-        <div><span class="home-domain-jp">読解と探究</span><span lang="en">Reading &amp; Research</span></div>
-      </div>
-    </div>
-    <section class="home-library home-shell" aria-labelledby="catalog">
+    <section class="home-intro home-shell" aria-labelledby="intro-title" data-reveal>
+      <div class="home-intro-title"><p class="home-kicker">A PLACE FOR INQUIRY</p><h2 id="intro-title">学問を根に、<br>原典を道しるべに。</h2><span class="home-intro-seal" aria-hidden="true">原典<br>探究</span></div>
+      <div class="home-intro-copy"><h3>テキストの先にある、<br>思想のつながりを読む。</h3><p>ディグナーガ（陳那）、ダルマキールティ（法称）、ダルモーッタラ（法上）。インド仏教の論理学・認識論を中心に、テキスト研究と概念のつながりを公開するデジタル知識ベースです。</p><div class="home-intro-principles"><span>原典と注釈</span><span>概念と論証</span><span>読解と探究</span></div></div>
+    </section>
+    <section class="home-library home-shell" aria-labelledby="catalog" data-reveal>
       <div class="home-section-copy">
         <p class="home-kicker">THE RESEARCH LIBRARY</p>
         <h2 id="catalog">人物と著作から、<br>思想の系譜をたどる。</h2>
@@ -82,12 +73,12 @@ description: 原典を読み、思索をつなぐ。インド仏教の論理学�
     </section>
     <section class="home-tools-section" aria-labelledby="tools">
       <div class="home-shell">
-        <div class="home-tools-heading">
+        <div class="home-tools-heading" data-reveal>
           <div><p class="home-kicker">TOOLS FOR INQUIRY</p><h2 id="tools">研究のそばに、<br>使える道具を。</h2></div>
           <p>テキストを読み、概念を整理する。<br>日々の研究を支える二つのツール。</p>
         </div>
         <div class="home-tool-grid">
-          <div class="home-tool-card home-reader-card">
+          <div data-reveal class="home-tool-card home-reader-card">
             <div class="home-tool-visual home-reader-visual" aria-hidden="true">
               <svg viewBox="0 0 320 156" fill="none"><path d="M66 78h68m52 0h68M160 37v19m0 44v19" stroke="currentColor" stroke-width="1"></path><circle cx="160" cy="78" r="25" stroke="currentColor"></circle><circle cx="66" cy="78" r="13" stroke="currentColor"></circle><circle cx="254" cy="78" r="13" stroke="currentColor"></circle><circle cx="160" cy="24" r="13" stroke="currentColor"></circle><circle cx="160" cy="132" r="13" stroke="currentColor"></circle><path d="m151 78 6 6 12-13" stroke="currentColor" stroke-width="1.5"></path><circle cx="66" cy="78" r="3" fill="currentColor"></circle><circle cx="254" cy="78" r="3" fill="currentColor"></circle></svg>
               <span>CONNECTING IDEAS</span>
@@ -99,7 +90,7 @@ description: 原典を読み、思索をつなぐ。インド仏教の論理学�
               <a class="home-text-link" href="./concept-reader/index.html" data-router-ignore data-no-popover="true">伴読ツールを開く</a>
             </div>
           </div>
-          <div class="home-tool-card home-tibetan-card">
+          <div data-reveal class="home-tool-card home-tibetan-card">
             <div class="home-tool-visual home-tibetan-visual" aria-hidden="true">
               <span class="home-tibetan-glyph" lang="bo">ཀ་</span>
               <span class="home-tibetan-roman">ka</span>
@@ -116,10 +107,10 @@ description: 原典を読み、思索をつなぐ。インド仏教の論理学�
       </div>
     </section>
     <section class="home-about-section" aria-labelledby="about">
-      <div class="home-shell home-about-grid">
-        <div><p class="home-kicker">ABOUT PRAMĀṆA</p><h2 id="about">問いを、<br>読みつづける。</h2></div>
+      <div class="home-shell home-about-grid" data-reveal>
+        <div><p class="home-kicker">ABOUT PRAMĀṆA</p><h2 id="about">研究と資料を、<br>ひらかれた場所へ。</h2></div>
         <div class="home-about-copy">
-          <p>ディグナーガ（陳那）、ダルマキールティ（法称）、ダルモーッタラ（法上）を中心とするインド仏教論理学・認識論のテキスト研究と、概念のつながりを公開するデジタル知識ベースです。</p>
+          <p>原典と注釈の読解を起点に、資料へのアクセスと読解の道具を整える。研究の蓄積を、これから読む人の探究へとつなぐための場所です。</p>
           <div class="home-author"><span class="home-author-monogram" aria-hidden="true">繆</span><div><span>繆 寿楽</span><span lang="en">Shoule Miao · Otani University</span></div><a href="https://researchmap.jp/miaoshoule" target="_blank" rel="noopener noreferrer">researchmap</a></div>
         </div>
       </div>
@@ -130,4 +121,5 @@ description: 原典を読み、思索をつなぐ。インド仏教の論理学�
     <div class="home-footer-links"><a href="https://github.com/NeMiao-95/buddhist-logic-wiki" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://quartz.jzhao.xyz/" target="_blank" rel="noopener noreferrer">Built with Quartz</a></div>
     <p class="home-copyright">© 2026 Shoule Miao</p>
   </footer>
+  <button class="home-motion-toggle" type="button" aria-pressed="true" aria-label="動きを再開" hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path class="motion-pause-icon" d="M8 6v12M16 6v12" stroke="currentColor" stroke-width="1.5"></path><path class="motion-play-icon" d="m9 6 9 6-9 6V6Z" stroke="currentColor" stroke-width="1.5"></path></svg><span class="motion-label">動きを再開</span></button>
 </div>
