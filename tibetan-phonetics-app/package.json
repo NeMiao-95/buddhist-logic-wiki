@@ -1,0 +1,14 @@
+{
+  "name": "tibetan-phonetics-inline",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Inline word-by-word Tibetan to phonetics converter based on rogerespel/ewts-js (Apache 2.0)",
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "node --test tests/interlinear.test.mjs"
+  },
+  "dependencies": {
+    "tibetan-ewts-converter": "^2.0.0"
+  }
+}

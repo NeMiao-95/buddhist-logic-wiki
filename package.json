@@ -22,7 +22,8 @@
     "prebuild": "npm run install-plugins",
     "build:wiki": "node quartz/bootstrap-cli.mjs build",
     "build:east": "node scripts/build-east.mjs",
-    "build:site": "npm run build:wiki && npm run build:east"
+    "build:phonetics": "node scripts/build-phonetics.mjs",
+    "build:site": "npm run build:wiki && npm run build:east && npm run build:phonetics"
   },
   "engines": {
     "npm": ">=10.9.2",

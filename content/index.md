@@ -18,6 +18,12 @@ title: 仏教論理学・認識論研究（Pramāṇa）
   <div style="font-size: 0.82em; opacity: 0.75; margin-top: 6px;">Designed by 繆 寿楽（Shoule Miao, Otani Univ.） · <a href="https://researchmap.jp/miaoshoule" target="_blank" rel="noreferrer">researchmap ↗</a></div>
 </div>
 
+<div style="margin: 0 0 24px; padding: 14px 16px; border: 1px solid rgba(40, 75, 99, 0.35); background: rgba(40, 75, 99, 0.06); border-radius: 10px;">
+  <div style="font-weight: 700; margin-bottom: 6px;">🔤 蔵文逐詞音訳ツール / Tibetan Inline Phonetics</div>
+  <a href="./tibetan-phonetics/index.html" data-router-ignore style="font-weight: 700; text-decoration: underline;">蔵文逐詞音訳ツールを開く（語彙単位インライン対照・Phonetics 並置変換）→</a>
+  <div style="font-size: 0.9em; opacity: 0.85; margin-top: 4px;">チベット語（Unicode / Wylie）を語彙単位で切り分け、<code>གཞན་ zhen ལ་ la …</code> 形式の逐詞音訳を出力（LotsawaHouse / Rigpa / Padmakara / THL 全体系対応）。</div>
+</div>
+
 ---
 
 
