@@ -6,6 +6,15 @@ import {
 } from "../types/schema";
 import { auditCompiledMarkdown } from "./citationAuditor";
 
+export const COLOPHON_FOOTER =
+  "> Compiled with ConceptPlug Reader · Method by Shoule Miao (https://researchmap.jp/miaoshoule)";
+
+function ensureColophonFooter(markdown: string): string {
+  const trimmed = markdown.trim();
+  if (trimmed.includes("researchmap.jp/miaoshoule")) return trimmed;
+  return `${trimmed}\n\n---\n\n${COLOPHON_FOOTER}`;
+}
+
 export const COMPILER_SYSTEM_PROMPT = `你是一个严谨的“图谱到说明文编译器”。你的唯一任务，是将输入 JSON 中的封闭知识，严格按照指定的【7段式骨架】改写为清晰、平实、易于人脑理解的中文说明文。
 
 必须遵守以下五条铁律：
@@ -179,6 +188,10 @@ export function compileDeterministically(bundle: ContextBundle): string {
     "",
     "## 七、一段话汇总（仅整合以上已知信息）",
     sec7,
+    "",
+    "---",
+    "",
+    COLOPHON_FOOTER,
   ].join("\n");
 }
 
@@ -217,7 +230,7 @@ export async function runSummaryCompiler(
         0,
         settings
       );
-      const trimmed = llmMarkdown.trim();
+      const trimmed = ensureColophonFooter(llmMarkdown);
       const audit = auditCompiledMarkdown(trimmed, bundle);
       return {
         nodeId: bundle.targetNodeId,

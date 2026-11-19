@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ArrowLeft, BookOpen, BookOpenCheck, Circle, PanelRight, Plus, Settings, Square } from "lucide-react";
+import { AuthorColophon, WIKI_URL } from "./AuthorColophon";
 
 interface TopBarProps {
   libraryOpen: boolean;
@@ -32,9 +33,6 @@ export const TopBar: React.FC<TopBarProps> = ({
   return (
     <header className="topbar">
       <div className="brand-area">
-        <a className="small-btn home-link" href="../" aria-label="返回 Wiki 主页">
-          <ArrowLeft size={14} aria-hidden="true" /> 返回主页
-        </a>
         <button
           type="button"
           className={`small-btn ${libraryOpen ? "btn-active" : ""}`}
@@ -45,7 +43,10 @@ export const TopBar: React.FC<TopBarProps> = ({
         </button>
         <BookOpenCheck size={20} color="#4f46e5" className="brand-icon" />
         <h1>ConceptPlug Reader</h1>
-        <span className="brand-badge">插头式伴读 · 磁吸图谱</span>
+        <AuthorColophon />
+        <a href={WIKI_URL} className="wiki-back-link" title="返回仏教論理学・認識論研究 Wiki">
+          <ArrowLeft size={12} /> Pramāṇa Wiki
+        </a>
       </div>
 
       <div className="create-bar">

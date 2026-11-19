@@ -42,6 +42,21 @@
 .admin-ok { color: #059669; font-size: 12px; font-weight: 600; }
 .admin-corner-btn { position: fixed; right: 14px; bottom: 12px; z-index: 30; border: 1px solid var(--border); background: rgba(255,255,255,0.92); backdrop-filter: blur(6px); color: var(--muted); border-radius: 999px; padding: 5px 11px; font-size: 11.5px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 2px 8px rgba(15,23,42,0.08); }
 .admin-corner-btn.logged-in { border-color: #6ee7b7; background: #ecfdf5; color: #047857; font-weight: 600; }
+.colophon-wrap { position: relative; display: inline-flex; align-items: center; }
+.colophon-trigger { border: 1px solid #e2e8f0; background: #f8fafc; color: #475569; border-radius: 999px; padding: 3px 9px 3px 5px; font-size: 11.5px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s; }
+.colophon-trigger:hover, .colophon-trigger.open { border-color: #c7d2fe; background: #eef2ff; color: #4338ca; }
+.colophon-seal { display: inline-flex; align-items: center; justify-content: center; width: 17px; height: 17px; border-radius: 4px; background: #b91c1c; color: #fff; font-size: 10px; font-weight: 700; font-family: serif; }
+.colophon-popover { position: absolute; top: calc(100% + 8px); left: 0; width: 280px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 14px; box-shadow: 0 12px 28px rgba(15,23,42,0.14); z-index: 45; display: flex; flex-direction: column; gap: 5px; }
+.colophon-name-row { display: flex; align-items: center; gap: 6px; font-size: 14px; color: #0f172a; }
+.colophon-affil { margin: 0; font-size: 12px; color: #334155; font-weight: 500; }
+.colophon-fields { margin: 0; font-size: 11.5px; color: #64748b; line-height: 1.45; }
+.colophon-links { display: flex; gap: 8px; margin-top: 6px; padding-top: 8px; border-top: 1px solid #f1f5f9; }
+.colophon-links a { font-size: 12px; color: #4f46e5; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; padding: 4px 8px; border-radius: 6px; background: #eef2ff; }
+.wiki-back-link { font-size: 11.5px; color: #475569; text-decoration: none; border: 1px solid #e2e8f0; padding: 3px 8px; border-radius: 999px; display: inline-flex; align-items: center; gap: 4px; background: #fff; }
+.wiki-back-link:hover { border-color: #c7d2fe; color: #4f46e5; }
+.prose-hr { border: none; border-top: 1px solid #e2e8f0; margin: 14px 0 8px; }
+.prose-colophon { margin: 4px 0 0; font-size: 11.5px; color: #64748b; font-style: italic; }
+
 
 .sync-btn-row button, .import-label-btn, .secondary-btn { border: 1px solid var(--border); background: #fff; border-radius: 8px; padding: 7px 12px; font-size: 12.5px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; }
 .danger-outline-btn { color: #dc2626 !important; border-color: #fecaca !important; }

@@ -48,7 +48,8 @@ assert.ok(bundle1.neighbors.some((n) => n.label === "Sāṃkhya"));
 
 const markdown = compileDeterministically(bundle1);
 assert.ok(markdown.includes("## 七、一段话汇总（仅整合以上已知信息）"));
-const sec7Body = markdown.split("## 七、一段话汇总（仅整合以上已知信息）")[1]?.trim() || "";
+assert.ok(markdown.includes("researchmap.jp/miaoshoule"));
+const sec7Body = (markdown.split("## 七、一段话汇总（仅整合以上已知信息）")[1] || "").split("---")[0]?.trim() || "";
 assert.ok(sec7Body.length > 20 && !sec7Body.includes("\n- "), "Section 7 must be a single cohesive paragraph");
 const auditPass = auditCompiledMarkdown(markdown, bundle1);
 assert.equal(auditPass.passed, true, `Expected audit pass, uncited: ${auditPass.uncitedSentences.join(" | ")}`);

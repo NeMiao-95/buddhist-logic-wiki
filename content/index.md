@@ -15,6 +15,7 @@ title: 仏教論理学・認識論研究（Pramāṇa）
   <div style="font-weight: 700; margin-bottom: 6px;">🧩 インタラクティブ伴読ツール / ConceptPlug Reader</div>
   <a href="./concept-reader/index.html" data-router-ignore style="font-weight: 700; text-decoration: underline;">ConceptPlug Reader を開く（概念插头式 AI 伴读与可复刻图谱编译器）→</a>
   <div style="font-size: 0.9em; opacity: 0.85; margin-top: 4px;">概念ノード・7プラグ整理・既知概念への磁気吸着・文献根拠短答・再現可能な解説文コンパイラ。</div>
+  <div style="font-size: 0.82em; opacity: 0.75; margin-top: 6px;">Designed by 繆 寿楽（Shoule Miao, Otani Univ.） · <a href="https://researchmap.jp/miaoshoule" target="_blank" rel="noreferrer">researchmap ↗</a></div>
 </div>
 
 ---

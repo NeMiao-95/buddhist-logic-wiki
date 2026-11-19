@@ -49,13 +49,15 @@ export const SummaryCompilerModal: React.FC<SummaryCompilerModalProps> = ({
     });
 
   const renderLineWithClickableCitations = (line: string, idx: number, allLines: string[]) => {
+    if (line.trim() === "---") return <hr key={idx} className="prose-hr" />;
     const isH1 = line.startsWith("# ");
     const isH2 = line.startsWith("## ");
-    const displayLine = isH2 ? line.slice(3) : isH1 ? line.slice(2) : line;
+    const isColophon = line.startsWith("> Compiled with");
+    const displayLine = isH2 ? line.slice(3) : isH1 ? line.slice(2) : isColophon ? line.slice(2) : line;
     const isSynthesisBody = idx > 0 && allLines[idx - 1]?.includes("七、一段话汇总");
     const parts = displayLine.split(/(\[(?:F|E|N)\d+\])/g);
     return (
-      <p key={idx} className={isH2 ? "prose-h2" : isH1 ? "prose-h1" : isSynthesisBody ? "prose-line prose-synthesis" : "prose-line"}>
+      <p key={idx} className={isH2 ? "prose-h2" : isH1 ? "prose-h1" : isColophon ? "prose-colophon" : isSynthesisBody ? "prose-line prose-synthesis" : "prose-line"}>
         {parts.map((part, pIdx) => {
           const m = part.match(/^\[((?:F|E|N)\d+)\]$/);
           if (!m) return <span key={pIdx}>{renderInlineText(part)}</span>;

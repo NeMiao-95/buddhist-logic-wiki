@@ -13,7 +13,7 @@
 body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; color: var(--text); background: var(--bg); }
 .app-shell { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
 .topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px; background: var(--panel); border-bottom: 1px solid var(--border); flex-wrap: wrap; }
-.brand-area { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; min-width: 0; }
+.brand-area { display: flex; align-items: center; gap: 10px; }
 .brand-area h1 { margin: 0; font-size: 16px; font-weight: 700; }
 .brand-badge { font-size: 11px; padding: 2px 8px; border-radius: 999px; background: var(--indigo-soft); color: var(--indigo); font-weight: 600; }
 .create-bar { display: flex; align-items: center; gap: 8px; background: #f1f5f9; padding: 4px 8px; border-radius: 10px; }
@@ -24,9 +24,6 @@ body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "P
 .primary-btn { border: none; background: var(--indigo); color: #fff; padding: 6px 12px; border-radius: 8px; font-size: 13px; cursor: pointer; display: flex; align-items: center; gap: 4px; font-weight: 600; }
 .topbar-actions { display: flex; align-items: center; gap: 8px; }
 .small-btn, .hud-reset-btn { border: 1px solid var(--border); background: #fff; padding: 6px 10px; border-radius: 8px; font-size: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; color: var(--text); }
-.home-link { text-decoration: none; white-space: nowrap; flex-shrink: 0; }
-.home-link:hover { background: var(--indigo-soft); border-color: var(--indigo); }
-.home-link:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
 .tip-banner { background: #fffbeb; border-bottom: 1px solid #fde68a; padding: 6px 16px; font-size: 12px; color: #92400e; display: flex; justify-content: space-between; align-items: center; }
 .tip-banner button { border: none; background: transparent; color: #92400e; cursor: pointer; font-weight: 600; }
 .workspace-grid { flex: 1; display: flex; min-height: 0; }
