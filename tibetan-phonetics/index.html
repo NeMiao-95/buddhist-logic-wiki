@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ja-JP">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="チベット語（Unicode / Wylie）を語彙単位でチベット文字と音訳（Phonetics）を並置・交錯出力するオンラインツール。">
+  <title>蔵文逐詞音訳ツール · Tibetan Inline Phonetics · Buddhist Logic Wiki</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <a class="back-link" href="../index.html">← Buddhist Logic Wiki</a>
+      <p class="eyebrow">TIBETAN PHILOLOGY TOOLKIT · PLAN A (WORD-LEVEL INLINE)</p>
+      <h1>蔵文逐詞音訳ツール · Tibetan Inline Phonetics</h1>
+      <p class="intro">
+        チベット語（Unicode または Wylie/EWTS）を語彙単位で切り分け、原文と音訳を並置・交錯形式（<code>གཞན་ zhen ལ་ la …</code>）で出力します。
+      </p>
+    </header>
+
+    <main>
+      <section class="panel input-panel" aria-label="入力設定">
+        <div class="input-header">
+          <label for="tib-input">チベット語テキスト（Unicode / Wylie）</label>
+          <div class="input-actions">
+            <button id="btn-example" type="button" class="btn-secondary">例文を入力 / Example</button>
+            <button id="btn-clear" type="button" class="btn-secondary">クリア / Clear</button>
+          </div>
+        </div>
+        <textarea
+          id="tib-input"
+          class="tib-textarea"
+          rows="5"
+          spellcheck="false"
+          placeholder="གཞན་ལ་ཡང་རང་གི་ཀུན་ནས་སློང་བར་བྱེད་པའི་སེམས་ཡང་དག་པར་མྱོང་བ་མེད་པས་འདྲ་ལ།&#10;または Wylie (例: sangs rgyas dang byang chub sems dpa'/) を貼り付けて Ctrl+Enter / Cmd+Enter"
+        ></textarea>
+
+        <div class="controls-row">
+          <div class="control-group">
+            <label for="phonemic-system">音訳方式 / Phonemic System</label>
+            <select id="phonemic-system"></select>
+          </div>
+
+          <div class="control-group checkbox-group">
+            <label class="checkbox-label" for="keep-punct">
+              <input id="keep-punct" type="checkbox" checked>
+              <span>蔵文句読点（<code>།</code> 等）を保持</span>
+            </label>
+          </div>
+
+          <div class="control-group submit-group">
+            <button id="btn-convert" type="button" class="btn-primary">
+              変換する / Make Inline Phonetics
+            </button>
+          </div>
+        </div>
+
+        <p class="note-banner">
+          ※ 自動分かち書き（<code>ewts-js</code> 辞書ベース・最長6音節）を使用しているため、文脈上の複合語・助詞の境界は100%ではありません。学術引用の際は原典文脈とあわせてご確認ください。
+        </p>
+      </section>
+
+      <section id="output-section" class="panel output-panel" hidden>
+        <div class="output-header">
+          <div>
+            <h2>1. 純テキスト交錯出力 / Plain Inline Output</h2>
+            <p class="hint">そのままノートや原稿へコピー＆ペーストできます。</p>
+          </div>
+          <div class="copy-wrap">
+            <span id="copy-status" class="copy-status" role="status" aria-live="polite"></span>
+            <button id="btn-copy" type="button" class="btn-secondary">コピー / Copy</button>
+          </div>
+        </div>
+        <textarea id="plain-output" class="plain-output" rows="6" readonly></textarea>
+
+        <div class="preview-header">
+          <div>
+            <h2>2. 対照リーディングビュー / Interlinear Reading View</h2>
+            <p class="hint">語彙ごとの対応関係を確認しやすい表示です。</p>
+          </div>
+          <div class="view-toggle" role="group" aria-label="表示スタイル">
+            <button id="view-stacked" type="button" class="toggle-btn active" aria-pressed="true">上下対照</button>
+            <button id="view-inline" type="button" class="toggle-btn" aria-pressed="false">インライン</button>
+          </div>
+        </div>
+        <div id="interlinear-view" class="interlinear-view mode-stacked"></div>
+      </section>
+
+      <section id="warn-section" class="panel warn-panel" hidden>
+        <h2>変換時の注意 / Warnings</h2>
+        <ul id="warn-list" class="warn-list"></ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Conversion engine powered by
+        <a href="https://github.com/rogerespel/ewts-js" target="_blank" rel="noreferrer">rogerespel/ewts-js</a>
+        (Apache License 2.0) · Integrated into
+        <a href="../index.html">Buddhist Logic Wiki</a>.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
