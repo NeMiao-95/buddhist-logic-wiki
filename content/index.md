@@ -26,7 +26,10 @@ description: 原典をひらく。認識をたどる。インド仏教の論理�
           <h1>原典をひらく。<br><span class="hero-accent">認識</span>をたどる。</h1>
           <p class="home-hero-lead">一つの言葉から、思想のつながりへ。<br>インド仏教の論理学・認識論を探究する<br>研究資料と、読解のための道具。</p>
           <div class="home-actions"><a class="home-button home-button-primary" href="./east/index.html" data-router-ignore data-no-popover="true">資料庫を探索する</a><a class="home-text-link" href="#tools" data-no-popover="true">研究ツールを見る</a></div>
-          <p class="home-hero-caption" lang="sa-Latn">pratyakṣa <span>·</span> anumāna <span>·</span> pramāṇa</p>
+          <div class="home-hero-meta">
+            <p class="home-hero-caption" lang="sa-Latn">pratyakṣa <span>·</span> anumāna <span>·</span> pramāṇa</p>
+            <button class="home-motion-toggle" type="button" aria-pressed="true" aria-label="動きを再開" hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path class="motion-pause-icon" d="M8 6v12M16 6v12" stroke="currentColor" stroke-width="1.5"></path><path class="motion-play-icon" d="m9 6 9 6-9 6V6Z" stroke="currentColor" stroke-width="1.5"></path></svg><span class="motion-label">動きを再開</span></button>
+          </div>
         </div>
         <div class="hero-illumination">
           <div class="hero-art-frame"><img class="hero-art" src="./static/pramana-manuscript.webp" width="1024" height="1024" alt="原典をひらく営みを表した、青と金の写本のイラスト" fetchpriority="high" decoding="async"></div>
@@ -42,10 +45,6 @@ description: 原典をひらく。認識をたどる。インド仏教の論理�
       </div>
       <svg class="hero-horizon" viewBox="0 0 1440 110" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M-20 85C180 10 330 120 560 61S940 41 1110 74 1310 64 1460 11V120H-20Z" fill="#193d75"></path><path d="M-20 104C210 40 340 126 570 80S930 58 1110 85 1300 84 1460 36" stroke="#c5a86c" stroke-width=".7" opacity=".65"></path><path d="M-20 112C200 68 420 132 690 97S1080 130 1460 72" stroke="#c5a86c" stroke-width=".5" opacity=".35"></path></svg>
     </section>
-    <section class="home-intro home-shell" aria-labelledby="intro-title" data-reveal>
-      <div class="home-intro-title"><p class="home-kicker">A PLACE FOR INQUIRY</p><h2 id="intro-title">学問を根に、<br>原典を道しるべに。</h2><span class="home-intro-seal" aria-hidden="true">原典<br>探究</span></div>
-      <div class="home-intro-copy"><h3>テキストの先にある、<br>思想のつながりを読む。</h3><p>ディグナーガ（陳那）、ダルマキールティ（法称）、ダルモーッタラ（法上）。インド仏教の論理学・認識論を中心に、テキスト研究と概念のつながりを公開するデジタル知識ベースです。</p><div class="home-intro-principles"><span>原典と注釈</span><span>概念と論証</span><span>読解と探究</span></div></div>
-    </section>
     <section class="home-library home-shell" aria-labelledby="catalog" data-reveal>
       <div class="home-section-copy">
         <p class="home-kicker">THE RESEARCH LIBRARY</p>
@@ -54,20 +53,20 @@ description: 原典をひらく。認識をたどる。インド仏教の論理�
         <p class="home-small-note" lang="en">Epistemology and Argumentation<br>in South Asia and Tibet</p>
       </div>
       <div class="home-catalog-grid">
-        <a class="home-catalog-card home-persons" href="./east/index.html#persons" data-router-ignore data-no-popover="true">
+        <article class="home-catalog-card home-persons">
           <svg class="home-catalog-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><circle cx="18" cy="11" r="5" stroke="currentColor" stroke-width="1.2"></circle><path d="M7 31c0-8 4-12 11-12s11 4 11 12M4 31h28" stroke="currentColor" stroke-width="1.2"></path></svg>
+          <h3><a class="home-catalog-link" href="./east/index.html#persons" data-router-ignore data-no-popover="true">人物から探す</a></h3>
           <span class="home-catalog-en" lang="en">Persons</span>
-          <h3>人物から探す</h3>
           <p>学匠の年代と、<br>その著作・関連資料をたどる。</p>
-          <span class="home-card-link">人物目録を開く</span>
-        </a>
-        <a class="home-catalog-card home-works" href="./east/index.html#works" data-router-ignore data-no-popover="true">
+          <span class="home-card-link" aria-hidden="true">人物目録を開く <span>→</span></span>
+        </article>
+        <article class="home-catalog-card home-works">
           <svg class="home-catalog-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M5 7h10a4 4 0 0 1 4 4v20a6 6 0 0 0-5-3H5V7Zm26 0H21a4 4 0 0 0-2 1.5M31 7v21h-9M9 12h5M9 17h5M24 12h3M24 17h3" stroke="currentColor" stroke-width="1.2"></path></svg>
+          <h3><a class="home-catalog-link" href="./east/index.html#works" data-router-ignore data-no-popover="true">著作から探す</a></h3>
           <span class="home-catalog-en" lang="en">Works</span>
-          <h3>著作から探す</h3>
           <p>原題・関連人物から、<br>著作と訳本の保存頁へ。</p>
-          <span class="home-card-link">著作目録を開く</span>
-        </a>
+          <span class="home-card-link" aria-hidden="true">著作目録を開く <span>→</span></span>
+        </article>
         <p class="home-catalog-note">人物は原資料に明記された年代順、著作はアルファベット順。年代不明の人物は別に表示します。</p>
       </div>
     </section>
@@ -79,30 +78,38 @@ description: 原典をひらく。認識をたどる。インド仏教の論理�
         </div>
         <div class="home-tool-grid">
           <div data-reveal class="home-tool-card home-reader-card">
-            <div class="home-tool-visual home-reader-visual" aria-hidden="true">
-              <svg viewBox="0 0 320 156" fill="none"><path d="M66 78h68m52 0h68M160 37v19m0 44v19" stroke="currentColor" stroke-width="1"></path><circle cx="160" cy="78" r="25" stroke="currentColor"></circle><circle cx="66" cy="78" r="13" stroke="currentColor"></circle><circle cx="254" cy="78" r="13" stroke="currentColor"></circle><circle cx="160" cy="24" r="13" stroke="currentColor"></circle><circle cx="160" cy="132" r="13" stroke="currentColor"></circle><path d="m151 78 6 6 12-13" stroke="currentColor" stroke-width="1.5"></path><circle cx="66" cy="78" r="3" fill="currentColor"></circle><circle cx="254" cy="78" r="3" fill="currentColor"></circle></svg>
-              <span>CONNECTING IDEAS</span>
+            <div class="home-tool-visual home-reader-visual">
+              <div class="home-reader-preview">
+                <p class="home-preview-label">読解メモの例</p>
+                <div class="home-preview-relation"><span lang="sa-Latn">Sāṃkhya</span><span aria-hidden="true">→</span><span>インド哲学の学派</span></div>
+                <p class="home-preview-source"><span>文献の根拠 · デモ文献 p.9</span><q lang="zh">精神（Puruṣa）与物质（Prakṛti）彼此独立</q></p>
+              </div>
             </div>
             <div class="home-tool-content">
               <p class="home-tool-category">読解・概念整理</p>
               <h3 lang="en">ConceptPlug Reader</h3>
-              <p>概念ノードと文献の根拠を結び、読解の過程を整理するインタラクティブ伴読ツール。</p>
-              <a class="home-text-link" href="./concept-reader/index.html" data-router-ignore data-no-popover="true">伴読ツールを開く</a>
+              <p>概念と文献の根拠を結び、読解メモを整理する。文献名・ページ・引用箇所を記録し、概念のつながりを図にできます。</p>
+              <a class="home-text-link" href="./concept-reader/index.html" data-router-ignore data-no-popover="true">読解ツールを開く</a>
             </div>
           </div>
           <div data-reveal class="home-tool-card home-tibetan-card">
-            <div class="home-tool-visual home-tibetan-visual" aria-hidden="true">
-              <span class="home-tibetan-glyph" lang="bo">ཀ་</span>
-              <span class="home-tibetan-roman">ka</span>
-              <span class="home-tool-visual-label">SCRIPT &amp; SOUND</span>
+            <div class="home-tool-visual home-tibetan-visual">
+              <div class="home-tibetan-preview">
+                <p class="home-preview-label">原文と音訳の対照例</p>
+                <div class="home-preview-words"><span><span lang="bo">གཞན་</span><span lang="bo-Latn">zhen</span></span><span><span lang="bo">ལ་</span><span lang="bo-Latn">la</span></span></div>
+              </div>
             </div>
             <div class="home-tool-content">
               <p class="home-tool-category">チベット語・音訳</p>
               <h3>蔵文逐詞音訳ツール</h3>
-              <p>チベット語（Unicode / Wylie）を語彙単位で区切り、原文と音訳を並べて表示します。</p>
+              <p>チベット語（Unicode / Wylie）を入力すると、原文と音訳を語ごとに並べて表示します。結果をノートや原稿へコピーできます。</p>
               <a class="home-text-link" href="./tibetan-phonetics/index.html" data-router-ignore data-no-popover="true">音訳ツールを開く</a>
             </div>
           </div>
+        </div>
+        <div class="home-graph-entry" data-reveal>
+          <p>Wikiの記事のつながりを、図からたどる。</p>
+          <button class="home-graph-button global-graph-icon" type="button" aria-label="概念グラフを開く"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" aria-hidden="true"><path d="m7 7 10 10M7 17 17 7M7 7h10v10H7Z"></path><circle cx="7" cy="7" r="2" fill="currentColor"></circle><circle cx="17" cy="7" r="2" fill="currentColor"></circle><circle cx="7" cy="17" r="2" fill="currentColor"></circle><circle cx="17" cy="17" r="2" fill="currentColor"></circle></svg><span>概念グラフを開く</span></button>
         </div>
       </div>
     </section>
@@ -110,7 +117,8 @@ description: 原典をひらく。認識をたどる。インド仏教の論理�
       <div class="home-shell home-about-grid" data-reveal>
         <div><p class="home-kicker">ABOUT PRAMĀṆA</p><h2 id="about">研究と資料を、<br>ひらかれた場所へ。</h2></div>
         <div class="home-about-copy">
-          <p>原典と注釈の読解を起点に、資料へのアクセスと読解の道具を整える。研究の蓄積を、これから読む人の探究へとつなぐための場所です。</p>
+          <p>ディグナーガ（陳那）、ダルマキールティ（法称）、ダルモーッタラ（法上）を中心とする、インド仏教の論理学・認識論のデジタル知識ベースです。</p>
+          <p>原典と注釈の読解を起点に、研究資料と読解の道具を公開しています。</p>
           <div class="home-author"><span class="home-author-monogram" aria-hidden="true">繆</span><div><span>繆 寿楽</span><span lang="en">Shoule Miao · Otani University</span></div><a href="https://researchmap.jp/miaoshoule" target="_blank" rel="noopener noreferrer">researchmap</a></div>
         </div>
       </div>
@@ -121,5 +129,4 @@ description: 原典をひらく。認識をたどる。インド仏教の論理�
     <div class="home-footer-links"><a href="https://github.com/NeMiao-95/buddhist-logic-wiki" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://quartz.jzhao.xyz/" target="_blank" rel="noopener noreferrer">Built with Quartz</a></div>
     <p class="home-copyright">© 2026 Shoule Miao</p>
   </footer>
-  <button class="home-motion-toggle" type="button" aria-pressed="true" aria-label="動きを再開" hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path class="motion-pause-icon" d="M8 6v12M16 6v12" stroke="currentColor" stroke-width="1.5"></path><path class="motion-play-icon" d="m9 6 9 6-9 6V6Z" stroke="currentColor" stroke-width="1.5"></path></svg><span class="motion-label">動きを再開</span></button>
 </div>
