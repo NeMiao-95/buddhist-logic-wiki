@@ -60,3 +60,4 @@ function initResearchHomepage() {
 }
 document.addEventListener("nav", initResearchHomepage)
 
+export default ""
