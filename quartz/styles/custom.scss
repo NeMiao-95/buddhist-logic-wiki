@@ -10,6 +10,7 @@ body:has(.pramana-home) {
   --home-line: #ddd3bd;
   --home-wash: #f0eadc;
   --home-accent: #8b6a30;
+  --home-section-space: clamp(3.5rem, 6vw, 5rem);
   --home-serif: "Iowan Old Style", "Palatino Linotype", "Yu Mincho", "Hiragino Mincho ProN", serif;
   background: var(--home-bg);
 }
@@ -82,7 +83,7 @@ body:has(.pramana-home) {
 
       & .search-button {
         width: 108px;
-        height: 42px;
+        height: 44px;
         padding: 0 0.8rem;
         border: 1px solid var(--home-line);
         border-radius: 25px;
@@ -102,8 +103,8 @@ body:has(.pramana-home) {
       }
 
       & .darkmode {
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
         padding: 10px;
         border: 1px solid var(--home-line);
         border-radius: 50%;
@@ -380,9 +381,9 @@ body:has(.pramana-home) {
   & h2 {
     margin-top: 1.2rem;
     font-family: var(--home-serif);
-    font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+    font-size: clamp(1.8rem, 2.6vw, 2.375rem);
     font-weight: 500;
-    line-height: 1.65;
+    line-height: 1.55;
     letter-spacing: 0.045em;
     scroll-margin-top: 2rem;
   }
@@ -390,9 +391,9 @@ body:has(.pramana-home) {
   & .home-library {
     display: grid;
     grid-template-columns: 0.85fr 1.35fr;
-    gap: 4rem;
+    gap: 3.5rem;
     align-items: start;
-    padding-block: 5.5rem;
+    padding-block: var(--home-section-space);
   }
 
   & .home-section-copy > p:not(.home-kicker) {
@@ -461,14 +462,16 @@ body:has(.pramana-home) {
   & .home-catalog-en {
     margin-top: 0.35rem;
     font-family: var(--home-serif);
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.3;
+    letter-spacing: 0.025em;
   }
 
   & .home-catalog-card h3 {
-    font-size: 1.375rem;
-    font-weight: 600;
+    font-family: var(--home-serif);
+    font-size: 1.5rem;
+    font-weight: 500;
   }
 
   & .home-catalog-link {
@@ -489,8 +492,8 @@ body:has(.pramana-home) {
     margin-top: 1.15rem;
     margin-bottom: 2rem;
     color: var(--home-text);
-    font-size: 0.875rem;
-    line-height: 2;
+    font-size: 0.9375rem;
+    line-height: 1.9;
   }
 
   & .home-card-link {
@@ -518,7 +521,7 @@ body:has(.pramana-home) {
   }
 
   & .home-tools-section {
-    padding-block: 4.7rem 5rem;
+    padding-block: var(--home-section-space);
     background: var(--home-wash);
     border-block: 1px solid var(--home-line);
   }
@@ -607,11 +610,11 @@ body:has(.pramana-home) {
     line-height: 1.8;
 
     & > span,
-    & q {
+    & .home-preview-excerpt {
       display: block;
     }
 
-    & > span {
+    & > span:first-child {
       font-size: 0.75rem;
     }
   }
@@ -735,7 +738,7 @@ body:has(.pramana-home) {
   }
 
   & .home-about-section {
-    padding-block: 4.8rem;
+    padding-block: var(--home-section-space);
     background: #143b7a;
     color: #f7f1e5;
 
@@ -747,7 +750,7 @@ body:has(.pramana-home) {
   & .home-about-grid {
     display: grid;
     grid-template-columns: 0.85fr 1.35fr;
-    gap: 4rem;
+    gap: 3.5rem;
     align-items: center;
   }
 
@@ -797,7 +800,7 @@ body:has(.pramana-home) {
   }
 
   & .home-footer {
-    padding-block: 2.3rem 5rem;
+    padding-block: 2.3rem 2.5rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -902,7 +905,7 @@ body:has(.pramana-home) {
     width: 96px;
 
     & .search-button {
-      width: 42px;
+      width: 44px;
       justify-content: center;
       padding: 10px;
 
@@ -1119,7 +1122,7 @@ body:has(.pramana-home) {
       background: var(--home-bg);
     }
   }
-  .pramana-home h2 { scroll-margin-top: 9.5rem; }
+  .pramana-home > #home-main > section[id] { scroll-margin-top: 6.75rem; }
 }
 .pramana-home {
   & .home-hero {
@@ -1133,23 +1136,24 @@ body:has(.pramana-home) {
     inset: 0;
     z-index: -1;
     background: url("./static/pramana-manuscript.webp") center 58% / cover;
-    opacity: 0.15;
+    opacity: 0.09;
+    mask-image: linear-gradient(90deg, transparent, #000 65%);
     pointer-events: none;
   }
   & .home-hero-grid {
     position: relative;
     z-index: 1;
     grid-template-columns: 1.05fr 1fr;
-    min-height: 665px;
+    min-height: 620px;
     gap: 2.5rem;
-    padding-block: 3.5rem 5.5rem;
+    padding-block: 3rem 4.25rem;
   }
   & .home-hero .home-kicker { color: #e2c88e; }
   & .home-hero h1 {
     color: #fff9ec;
-    font-size: clamp(2.6rem, 4.3vw, 4rem);
-    letter-spacing: 0.055em;
-    line-height: 1.6;
+    font-size: clamp(2.6rem, 4.2vw, 3.8rem);
+    letter-spacing: 0.035em;
+    line-height: 1.5;
   }
   & .hero-accent { color: #e4c885; }
   & .home-hero-lead { color: #e1e7f1; font-size: 1.0625rem; }
@@ -1173,7 +1177,7 @@ body:has(.pramana-home) {
   }
   & .hero-illumination {
     width: 100%;
-    max-width: 550px;
+    max-width: 500px;
     aspect-ratio: 1;
     position: relative;
     justify-self: center;
@@ -1243,7 +1247,7 @@ body:has(.pramana-home) {
     & i:nth-child(5) { top: 46%; left: 95%; animation-delay: -2s; }
     & i:nth-child(6) { top: 90%; left: 25%; animation-delay: -15s; height: 4px; }
   }
-  & .home-library { padding-block: 5rem 5.5rem; }
+  & .home-library { padding-block: var(--home-section-space); }
   & .home-catalog-card { transition: box-shadow 200ms ease; }
   & .home-catalog-card:hover { box-shadow: 0 10px 28px #102d6612; }
   & .home-persons { position: relative; overflow: hidden; }
@@ -1273,7 +1277,7 @@ body:has(.pramana-home) {
     font-size: 0.875rem;
     cursor: pointer;
     &[hidden] { display: none; }
-    &:focus-visible { outline: 2px solid var(--home-accent); outline-offset: 4px; }
+    &:focus-visible { outline: 2px solid #e4c885; outline-offset: 4px; }
     &:disabled { cursor: default; }
     & .motion-play-icon { display: none; }
     &[aria-pressed="true"] .motion-play-icon { display: block; }
@@ -1296,18 +1300,22 @@ body:has(.pramana-home) {
 }
 @media (max-width: 1050px) {
   .pramana-home {
-    & .home-hero-grid { min-height: 585px; gap: 1.2rem; padding-block: 3rem 4.8rem; }
+    & .home-hero-grid { min-height: 560px; gap: 1.2rem; padding-block: 3rem 4rem; }
     & .home-hero h1 { font-size: clamp(2.3rem, 4.3vw, 3.1rem); }
     & .hero-orbit-label { letter-spacing: 0.12em; }
   }
 }
 @media (max-width: 760px) {
   .pramana-home {
-    & .home-hero-grid { grid-template-columns: 1fr; min-height: 0; gap: 3.2rem; padding-block: 2.8rem 5rem; }
+    & .home-hero-grid { grid-template-columns: 1fr; min-height: 0; gap: 2.5rem; padding-block: 2.2rem 4.25rem; }
     & .home-hero h1 { font-size: clamp(2.2rem, 7.4vw, 3.3rem); }
     & .home-hero-lead { font-size: 1rem; }
-    & .home-hero-caption { margin-top: 1.6rem; font-size: 0.9375rem; }
-    & .hero-illumination { max-width: 440px; width: 96%; }
+    & .home-hero-caption { margin-top: 1.6rem; font-size: 0.875rem; letter-spacing: 0.025em; }
+    & .home-hero-caption span { padding-inline: 0.35rem; }
+    & .home-hero-meta { column-gap: 0.75rem; }
+    & .home-motion-toggle { width: 44px; padding: 10px; justify-content: center; }
+    & .motion-label { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    & .hero-illumination { max-width: 300px; width: 92%; }
     & .hero-horizon { height: 70px; }
     & .home-library { padding-block: 3.5rem; }
   }
