@@ -82,7 +82,7 @@ description: 原典をひらく。認識をたどる。インド仏教の論理�
               <div class="home-reader-preview">
                 <p class="home-preview-label">読解メモの例</p>
                 <div class="home-preview-relation"><span lang="sa-Latn">Sāṃkhya</span><span aria-hidden="true">→</span><span>インド哲学の学派</span></div>
-                <p class="home-preview-source"><span>文献の要点 · デモ文献 p.9</span><span class="home-preview-excerpt">精神と物質を、独立したものとして捉える。</span></p>
+                <p class="home-preview-source"><span>文献の要点</span><span class="home-preview-excerpt">精神と物質を、独立したものとして捉える。</span></p>
               </div>
             </div>
             <div class="home-tool-content">
